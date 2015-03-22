@@ -1,0 +1,312 @@
+﻿body {
+    text-align: center;
+    background: url('../img/Hartmann.jpg') top center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    font-size: 15px;
+    line-height: 25px;
+    font-family: 'Special Elite', cursive;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    -webkit-transition: 1s linear;
+    -moz-transition: 1s linear;
+    -o-transition: 1s linear;
+    transition: 1s linear;
+}
+
+/* bg picture from: http://en.wikipedia.org/wiki/Industrial_Revolution#/media/File:Hartmann_Maschinenhalle_1868_(01).jpg */
+
+.container {
+    width: 80%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+a,
+a:active,
+a:visited,
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.em {
+}
+
+.em2 {
+    font-weight: 900;
+    letter-spacing: 2.4px;
+}
+
+/* minute */
+.minute {
+    padding: 15px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: 1s linear;
+    transition: all .2s ease-in-out;
+}
+
+.minute-bg {
+    width: 150px;
+    height: 150px;
+    background-color: #141514;
+    border-radius: 75px;
+    position: absolute;
+    z-index: 1;
+}
+
+.half-minute-clip-1, .half-minute-clip-2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 2;
+}
+
+.half-minute-clip-1 {
+    clip: rect(0px,150px,150px,75px);
+}
+
+.half-minute-clip-2 {
+    clip: rect(0px,75px,150px,0px);
+}
+
+.half-minute-1, .half-minute-2 {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 75px;
+    position: absolute;
+}
+
+.half-minute-1 {
+    clip: rect(0px,150px,150px,75px);
+}
+
+.half-minute-2 {
+    clip: rect(0px,75px,150px,0px);
+}
+
+.minute-front {
+    width: 140px;
+    height: 140px;
+    margin: 5px 0 0 5px;
+    border-radius: 100px;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    font-size: 20px;
+    line-height: 145px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background: url('../img/minute-front.png') bottom center;          
+}
+
+.weekday {
+    -webkit-transition: all .9s linear;
+    -moz-transition: all .9s linear;
+    -o-transition: 1s linear;
+    transition: all .9s linear;
+}
+
+.clock-time {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: -57px;
+    opacity: 0;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: 1s linear;
+    transition: all .5s linear;
+}
+
+.minute:hover {
+    cursor:default;
+}
+
+.minute:hover .weekday {
+    -webkit-transform: scale(1.07);
+    -moz-transform: scale(1.07);
+    -o-transform: scale(1.07);
+    transform: scale(1.07);
+}
+
+.minute:hover .clock-time {
+    opacity: 1;
+    -moz-transition-delay: 2s;
+    -o-transition-delay: 2s;
+    -webkit-transition-delay: 2s;
+    transition-delay: 2s;
+}
+
+/* Day progress bar */
+.day-container {
+    height: 30px;
+    width: 100%;
+    position: relative;
+    margin: 65px 0;
+    border-right: 3px solid red;
+    border-left: 1px solid #fff;
+    opacity: 0.8;
+    -webkit-transition: all .8s linear;
+    -moz-transition: all .8s linear;
+    -o-transition: all .8s linear;
+    transition: all .8s linear;
+}
+
+.day-container:hover {
+    opacity: 1;
+}
+            
+.day-container:before {
+    content: '0';
+    left: -4px;
+}
+
+.day-progress {
+    background-color: #fff;
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    z-index: 333;
+    -webkit-transition: 1s linear;
+    -moz-transition: 1s linear;
+    -o-transition: 1s linear;
+    transition: 1s linear;
+}
+
+.day-progress:after { /*red dot*/
+    height: 11px;
+    width: 11px;
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    content: '';
+}
+
+.day-third-1,
+.day-third-2,
+.day-third-3 {
+    border-right: 1px solid #fff;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+.day-third-1 {
+    width: 37.5%;
+        
+}
+.day-third-2 {
+    left: 37.5%;
+    width: 33.333%;
+}
+
+.day-third-3 {
+    left: 70.833%;
+    width: 29.19%;
+    border-right: 0;
+}
+
+.day-third-1:before,
+.day-third-2:before,
+.day-third-3:before,
+.day-third-3:after,
+.day-container:after,
+.day-container:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -25px;
+    font-size: 12px;
+}
+
+.day-third-2:before {
+    content: '9';
+    left: 0;
+}
+
+.day-third-3:before {
+    content: '17';
+    left: -7px;
+}
+
+.day-container:after {
+    content: '24';
+    left: 99%;
+}
+
+/* Telling time */
+.time-say-container,
+.day-time,
+.day-percent {
+    opacity: 0.9;
+    -webkit-transition: 1.2s linear;
+    -moz-transition: 1.2s linear;
+    -o-transition: 1.2s linear;
+    transition: 1.2s linear;
+}
+
+.time-say-container:hover .day-time,
+.time-say-container:hover .day-percent {
+    opacity: 1;
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -moz-transition-delay: .9s;
+    -o-transition-delay: .9s;
+    -webkit-transition-delay: .9s; 
+    transition-delay: .9s;
+}
+
+.time-say-container:hover .day-percent {
+    -moz-transition-delay: 1.9s;
+    -o-transition-delay: 1.9s;
+    -webkit-transition-delay: 1.9s; 
+    transition-delay: 1.9s;
+}
+
+/**/
+#toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.1;
+    display: block;
+    padding: 5px 11px 200px 200px;
+    margin: 20px;
+    background: url('../img/favicon.png') no-repeat top right;
+    -webkit-transition: 1.2s linear;
+    -moz-transition: 1.2s linear;
+    -o-transition: 1.2s linear;
+    transition: 1.2s linear;
+    -moz-transition-delay: .3s;
+    -o-transition-delay: .3s;
+    -webkit-transition-delay: .3s; 
+    transition-delay: .3s;
+} 
+ 
+#toggle:hover {
+    opacity: 0.8;
+    text-decoration:none;
+}
+
