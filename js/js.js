@@ -110,13 +110,13 @@ function getMinute() {
         } else if (h >= 4 && h < 9) {
             $(".day-time").html("Good morning! It's <span class='em'>" + displayHours(8 - h) + displayMinutes(60 - m) + "</span > until work time.");
         } else if (h >= 9 && h < 14) {
-            $(".day-time").html("It has been <span class='em'>" + displayHours(h - 9) + displayMinutes(m) + " </span > since workday started.");
+            $(".day-time").html("It's been <span class='em'>" + displayHours(h - 9) + displayMinutes(m) + " </span > since workday started.");
         } else if (h >= 14 && h < 17) {
             $(".day-time").html("Almost over! It's <span class='em'>" + displayHours(16 - h) + displayMinutes(60 - m) + "</span > until play time.");
-        } else if (h >= 17 && h < 21) {
-            $(".day-time").html("It's <span class='em'>" + displayHours(h - 17) + displayMinutes(m) + "</span > past workday end. Play time!");
-        } else if (h >= 21) {
-            $(".day-time").html("Good evening! It's <span class='em'>" + displayHours(23 - h) + displayMinutes(60 - m) + "</span > until tomorrow.");
+        } else if (h >= 17 && h < 23) {
+            $(".day-time").html("It's <span class='em'>" + displayHours(h - 17) + displayMinutes(m) + "</span > since workday ended. Play time!");
+        } else if (h >= 23) {
+            $(".day-time").html("It's only <span class='em'>" + displayHours(23 - h) + displayMinutes(60 - m) + "</span > until tomorrow. Shouldn't you be getting to sleep?");
         }
     }
 
