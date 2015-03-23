@@ -37,7 +37,7 @@ function getMinute() {
 
     // --- for testing
     // day = 4;
-    // h = 12;
+    // h = 22;
     // m = 59;
 
     // -- transform seconds
@@ -92,9 +92,9 @@ function getMinute() {
 
     // --- say the time
     if (day == 0) {
-        $(".day-time").html("It's <span class='em'>" + displayHours(23 - h) + displayMinutes(60 - m) + "</span > until Monday");
+        $(".day-time").html("It's <span class='em'>" + displayHours(23 - h) + displayMinutes(60 - m) + "</span > until Monday.");
     } else if (day == 6) {
-        $(".day-time").html("It's <span class='em'>" + displayHours((23 - h) + 24) + displayMinutes(60 - m) + "</span > until Monday");
+        $(".day-time").html("It's <span class='em'>" + displayHours((23 - h) + 24) + displayMinutes(60 - m) + "</span > until Monday.");
     } else {
         if (h == 9 && m == 0) {
             $(".day-time").html("It's time to work!");
@@ -110,13 +110,13 @@ function getMinute() {
         } else if (h >= 4 && h < 9) {
             $(".day-time").html("Good morning! It's <span class='em'>" + displayHours(8 - h) + displayMinutes(60 - m) + "</span > until work time.");
         } else if (h >= 9 && h < 14) {
-            $(".day-time").html("It has been <span class='em'>" + displayHours(h - 9) + displayMinutes(m) + " </span > since work time began.");
+            $(".day-time").html("It has been <span class='em'>" + displayHours(h - 9) + displayMinutes(m) + " </span > since workday started.");
         } else if (h >= 14 && h < 17) {
             $(".day-time").html("Almost over! It's <span class='em'>" + displayHours(16 - h) + displayMinutes(60 - m) + "</span > until play time.");
         } else if (h >= 17 && h < 21) {
             $(".day-time").html("It's <span class='em'>" + displayHours(h - 17) + displayMinutes(m) + "</span > past workday end. Play time!");
         } else if (h >= 21) {
-            $(".day-time").html("It's <span class='em'>" + displayHours(23 - h) + displayMinutes(60 - m) + "</span > until tomorrow starts.");
+            $(".day-time").html("Good evening! It's <span class='em'>" + displayHours(23 - h) + displayMinutes(60 - m) + "</span > until tomorrow.");
         }
     }
 
